@@ -1,0 +1,653 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module: Elo::Configuration</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo; 
+    <span class='title'><a href="../Elo.html" title="Elo (module)">Elo</a></span>
+     &raquo; 
+    <span class="title">Configuration</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Elo::Configuration 
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/elo.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_k_factor-instance_method" title="#default_k_factor (instance method)">- (Object) <strong>default_k_factor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+The default k-factor is chosen when no k-factor rules apply.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_rating-instance_method" title="#default_rating (instance method)">- (Object) <strong>default_rating</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+This is the rating every player starts out with.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pro_rating_boundry-instance_method" title="#pro_rating_boundry (instance method)">- (Object) <strong>pro_rating_boundry</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+This is the lower boundry of the rating you need to be a pro player.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starter_boundry-instance_method" title="#starter_boundry (instance method)">- (Object) <strong>starter_boundry</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+This is the lower boundry in the amount of games played to be a starting
+player This setting is used in the FIDE k-factor rules.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use_FIDE_settings-instance_method" title="#use_FIDE_settings (instance method)">- (Object) <strong>use_FIDE_settings</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Use the settings that FIDE use for determening the K-factor.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configure-instance_method" title="#configure (instance method)">- (Object) <strong>configure</strong>(&amp;block) {|_self| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Configure Elo in a block style.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#k_factor-instance_method" title="#k_factor (instance method)">- (Object) <strong>k_factor</strong>(factor, &amp;rule) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Add a K-factor rule.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="default_k_factor=-instance_method"></span>
+      <span id="default_k_factor-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="default_k_factor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_k_factor</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+The default k-factor is chosen when no k-factor rules apply. K-factor rules
+can be added by using the <tt>k_factor</tt>-method. (default = 15)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='default_k_factor identifier id'>default_k_factor</span>
+  <span class='@default_k_factor ivar id'>@default_k_factor</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="default_rating=-instance_method"></span>
+      <span id="default_rating-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="default_rating-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_rating</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This is the rating every player starts out with. (default = 1000)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 47</span>
+
+<span class='def def kw'>def</span> <span class='default_rating identifier id'>default_rating</span>
+  <span class='@default_rating ivar id'>@default_rating</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="pro_rating_boundry=-instance_method"></span>
+      <span id="pro_rating_boundry-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="pro_rating_boundry-instance_method">
+  
+    - (<tt>Object</tt>) <strong>pro_rating_boundry</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This is the lower boundry of the rating you need to be a pro player. This
+setting is used in the FIDE k-factor rules. (default = 2400)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 36</span>
+
+<span class='def def kw'>def</span> <span class='pro_rating_boundry identifier id'>pro_rating_boundry</span>
+  <span class='@pro_rating_boundry ivar id'>@pro_rating_boundry</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="starter_boundry=-instance_method"></span>
+      <span id="starter_boundry-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="starter_boundry-instance_method">
+  
+    - (<tt>Object</tt>) <strong>starter_boundry</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This is the lower boundry in the amount of games played to be a starting
+player This setting is used in the FIDE k-factor rules. (default = 30)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 40</span>
+
+<span class='def def kw'>def</span> <span class='starter_boundry identifier id'>starter_boundry</span>
+  <span class='@starter_boundry ivar id'>@starter_boundry</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="use_FIDE_settings=-instance_method"></span>
+      <span id="use_FIDE_settings-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="use_FIDE_settings-instance_method">
+  
+    - (<tt>Object</tt>) <strong>use_FIDE_settings</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Use the settings that FIDE use for determening the K-factor. This is the
+case when all settings are unaltered. (default = true)
+</p>
+<p>
+In short:
+</p>
+<ul>
+<li>K-factor is 25 when a player is a starter (less than 30 games played)
+
+</li>
+<li>K-factor is 10 when a player is a pro (rating above 2400, now or in the
+past)
+
+</li>
+<li>K-factor is 15 when a player in other cases
+
+</li>
+</ul>
+<p>
+If you want to use your own settings, either change the boundry settings,
+or set this setting to false and add you&#8217;re own k-factor rules.
+K-factor rules can be added by using the <tt>k_factor</tt>-method.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 61</span>
+
+<span class='def def kw'>def</span> <span class='use_FIDE_settings identifier id'>use_FIDE_settings</span>
+  <span class='@use_FIDE_settings ivar id'>@use_FIDE_settings</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="configure-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configure</strong>(&amp;block) {|_self| ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Configure Elo in a block style.
+</p>
+<pre class="code">
+  <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='configure identifier id'>configure</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='config identifier id'>config</span><span class='bitor op'>|</span>
+    <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='setting identifier id'>setting</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span>
+  <span class='end end kw'>end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+        <span class='type'>(<tt>_self</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Yield Parameters:</h3>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="" title="Elo::Configuration (module)">Elo::Configuration</a></tt>)</span>
+      
+      
+        <span class='name'>_self</span>
+      
+      
+      
+        &mdash;
+        
+the object that the method was called on
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 68</span>
+
+<span class='def def kw'>def</span> <span class='configure identifier id'>configure</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="k_factor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>k_factor</strong>(factor, &amp;rule) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Add a K-factor rule. The first argument is the k-factor value. The block
+should return a boolean that determines if this K-factor rule applies. The
+first rule that applies is the one determining the K-factor.
+</p>
+<p>
+The block is instance_eval&#8217;ed into the player, so you can access all
+it&#8217;s properties directly. The K-factor is recalculated every time a
+match is played.
+</p>
+<p>
+By default, the FIDE settings are used (see: <tt>use_FIDE_settings</tt>).
+To implement that yourself, you could write:
+</p>
+<pre class="code">
+  <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='configure identifier id'>configure</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='config identifier id'>config</span><span class='bitor op'>|</span>
+    <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='k_factor identifier id'>k_factor</span><span class='lparen token'>(</span><span class='integer val'>10</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='pro? fid id'>pro?</span> <span class='or or kw'>or</span> <span class='pro_rating? fid id'>pro_rating?</span> <span class='rbrace token'>}</span>
+    <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='k_factor identifier id'>k_factor</span><span class='lparen token'>(</span><span class='integer val'>25</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='starter? fid id'>starter?</span> <span class='rbrace token'>}</span>
+    <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='default_k_factor identifier id'>default_k_factor</span> <span class='assign token'>=</span> <span class='integer val'>15</span>
+  <span class='end end kw'>end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 30</span>
+
+<span class='def def kw'>def</span> <span class='k_factor identifier id'>k_factor</span><span class='lparen token'>(</span><span class='factor identifier id'>factor</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='rule identifier id'>rule</span><span class='rparen token'>)</span>
+  <span class='k_factors identifier id'>k_factors</span> <span class='lshft op'>&lt;&lt;</span> <span class='lbrace token'>{</span> <span class='symbol val'>:factor</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='factor identifier id'>factor</span><span class='comma token'>,</span> <span class='symbol val'>:rule</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rule identifier id'>rule</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Mar 14 17:14:15 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

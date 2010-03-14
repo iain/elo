@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: Elo::Game</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (G)</a> &raquo; 
+    <span class='title'><a href="../Elo.html" title="Elo (module)">Elo</a></span>
+     &raquo; 
+    <span class="title">Game</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Elo::Game 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Elo::Game</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></dd>
+      
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/elo.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  
+  
+  
+  
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#draw-instance_method" title="#draw (instance method)">- (Object) <strong>draw</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lose-instance_method" title="#lose (instance method)">- (Object) <strong>lose</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#loser%3D-instance_method" title="#loser= (instance method)">- (Object) <strong>loser</strong>(player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_rating-instance_method" title="#new_rating (instance method)">- (Object) <strong>new_rating</strong>(player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#result%3D-instance_method" title="#result= (instance method)">- (Object) <strong>result</strong>(result) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Result is from the perspective of player one.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">- (Object) <strong>save</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+TODO.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#win-instance_method" title="#win (instance method)">- (Object) <strong>win</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#winner%3D-instance_method" title="#winner= (instance method)">- (Object) <strong>winner</strong>(player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+  </ul>
+
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></h3>
+  <p class="inherited"><a href="EloHelper.html#attributes-instance_method" title="Elo::EloHelper#attributes (method)">#attributes</a>, <a href="EloHelper.html#included-class_method" title="Elo::EloHelper.included (method)">included</a>, <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">#initialize</a></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">Elo::EloHelper</a></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="draw-instance_method">
+  
+    - (<tt>Object</tt>) <strong>draw</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+229
+230
+231</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 229</span>
+
+<span class='def def kw'>def</span> <span class='draw identifier id'>draw</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='integer val'>0</span><span class='integer val'>.5</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="lose-instance_method">
+  
+    - (<tt>Object</tt>) <strong>lose</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+225
+226
+227</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 225</span>
+
+<span class='def def kw'>def</span> <span class='lose identifier id'>lose</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='integer val'>0</span><span class='integer val'>.0</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="loser=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>loser=</strong>(player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 241</span>
+
+<span class='def def kw'>def</span> <span class='loser= identifier id'>loser=</span><span class='lparen token'>(</span><span class='player identifier id'>player</span><span class='rparen token'>)</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='player identifier id'>player</span> <span class='eq op'>==</span> <span class='symbol val'>:one</span> <span class='question op'>?</span> <span class='integer val'>0</span><span class='integer val'>.0</span> <span class='colon op'>:</span> <span class='float val'>1.0</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="new_rating-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_rating</strong>(player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 245</span>
+
+<span class='def def kw'>def</span> <span class='new_rating identifier id'>new_rating</span><span class='lparen token'>(</span><span class='player identifier id'>player</span><span class='rparen token'>)</span>
+  <span class='ratings identifier id'>ratings</span><span class='lbrack token'>[</span><span class='player identifier id'>player</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='new_rating identifier id'>new_rating</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="result=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>result=</strong>(result) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Result is from the perspective of player one.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 214</span>
+
+<span class='def def kw'>def</span> <span class='result= identifier id'>result=</span><span class='lparen token'>(</span><span class='result identifier id'>result</span><span class='rparen token'>)</span>
+  <span class='@result ivar id'>@result</span> <span class='assign token'>=</span> <span class='result identifier id'>result</span>
+  <span class='one identifier id'>one</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol val'>:played</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='two identifier id'>two</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol val'>:played</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='save identifier id'>save</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="save-instance_method">
+  
+    - (<tt>Object</tt>) <strong>save</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+TODO
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 234</span>
+
+<span class='def def kw'>def</span> <span class='save identifier id'>save</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="win-instance_method">
+  
+    - (<tt>Object</tt>) <strong>win</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 221</span>
+
+<span class='def def kw'>def</span> <span class='win identifier id'>win</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='float val'>1.0</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="winner=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>winner=</strong>(player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+237
+238
+239</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 237</span>
+
+<span class='def def kw'>def</span> <span class='winner= identifier id'>winner=</span><span class='lparen token'>(</span><span class='player identifier id'>player</span><span class='rparen token'>)</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='player identifier id'>player</span> <span class='eq op'>==</span> <span class='symbol val'>:one</span> <span class='question op'>?</span> <span class='float val'>1.0</span> <span class='colon op'>:</span> <span class='integer val'>0</span><span class='integer val'>.0</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Mar 14 17:14:16 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

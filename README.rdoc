@@ -1,6 +1,113 @@
-= elo
+= Elo
 
-Description goes here.
+From {Wikipedia}[http://en.wikipedia.org/wiki/Elo_rating_system]:
+
+The Elo rating system is a method for calculating the relative skill levels of
+players in two-player games such as chess and Go. It is named after its creator
+Arpad Elo, a Hungarian-born American physics professor.
+
+The Elo system was invented as an improved chess rating system, but today it is
+also used in many other games. It is also used as a rating system for multiplayer
+competition in a number of computer games, and has been adapted to team sports
+including association football, American college football and basketball, and
+Major League Baseball.
+
+== Links
+
+* {API documentation}[http://iain.github.com/elo/doc]
+* {Source Code}[http://github.com/iain/elo]
+
+== Usage
+
+You need to have at least to players that can play a game (duh).
+
+  bob  = Elo::Player.new
+  jane = Elo::Player.new(:rating => 1500)
+
+Once you have players, you can register games in a variaty of ways.
+There is more than one way to do it, choose whatever works from your other code:
+
+  game1 = bob.wins_from(jane)
+  game2 = bob.loses_from(jane)
+  game3 = bob.plays_draw(jane)
+
+  game4 = bob.versus(jane)
+  game4.winner = jane
+
+  game5 = bob.versus(jane)
+  game5.loser = jane
+
+  game6 = bob.versus(jane)
+  game6.draw
+
+  game7 = bob.versus(jane)
+  game7.result = 1 # result is in perspective of bob, so bob wins
+
+You can get all kinds of info from a player:
+
+  bob.rating
+  bob.pro?
+  bob.starter?
+  bob.pro_rating?
+  bob.games_played
+  bob.games
+
+Or get a list of players:
+
+  Elo::Player.all
+
+
+== Configuration
+
+You can configure Elo in many ways. In it's default configuration, it is configured
+in the same way as the {FIDE}[http://www.fide.com/] (World Chess Foundation).
+
+Altering settings to your liking is very easy and very flexible. You can even specify
+your own K-factor rules. Have a look at the Rdoc in the code for a complete reference.
+
+Here is an example:
+
+  Elo.configure do |config|
+
+    # Every player starts with a rating of 1000
+    config.default_rating = 1000
+
+    # A player is considered a pro, when he/she has more than 2400 points
+    config.pro_rating_boundry = 2400
+
+    # A player is considered a new, when he/she has played less than 30 games
+    config.starter_boundry = 30
+
+  end
+
+== About the K-factor
+
+The Elo rating system knows a variable called the "K-factor". The K-factor is used
+to reward new talent and stableize the rating once a player is participating longer.
+
+FIDE (the World Chess Foundation), gives players with less than 30 played games a
+K-factor of 25. Normal players get a K-factor of 15 and pro's get a K-factor of 10.
+Once you reach a pro status, you're K-factor never changes, even if your rating drops.
+
+You need to provide Elo the amount of games played, their rating and their pro-status.
+
+  bob = Elo::Player.new(:games_played => 29, :rating => 2300, :pro => true)
+
+You can define your own K-factors by adding K-factor rules.
+This code will change the K-factor to 12, for every player who's name starts with a B,
+and 16 for everybody else.
+
+  Elo.configure do |config|
+    config.k_factor(12) { name =~ /^b/i }
+    config.default_k_factor = 16
+    config.use_FIDE_settings = false
+  end
+
+
+
+== Installation
+
+  gem install elo
 
 == Note on Patches/Pull Requests
  
@@ -14,4 +121,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 Iain Hecker. See LICENSE for details.
+Copyright (c) 2010 Iain Hecker. Released under the MIT License

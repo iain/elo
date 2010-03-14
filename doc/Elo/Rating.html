@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: Elo::Rating</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><a href="../Elo.html" title="Elo (module)">Elo</a></span>
+     &raquo; 
+    <span class="title">Rating</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Elo::Rating 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Elo::Rating</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></dd>
+      
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/elo.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  
+  
+  
+  
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#change-instance_method" title="#change (instance method)">- (Object) <strong>change</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expected-instance_method" title="#expected (instance method)">- (Object) <strong>expected</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_rating-instance_method" title="#new_rating (instance method)">- (Object) <strong>new_rating</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#result-instance_method" title="#result (instance method)">- (Object) <strong>result</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid_result%3F-instance_method" title="#valid_result? (instance method)">- (Boolean) <strong>valid_result?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+  </ul>
+
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></h3>
+  <p class="inherited"><a href="EloHelper.html#attributes-instance_method" title="Elo::EloHelper#attributes (method)">#attributes</a>, <a href="EloHelper.html#included-class_method" title="Elo::EloHelper.included (method)">included</a>, <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">#initialize</a></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">Elo::EloHelper</a></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="change-instance_method">
+  
+    - (<tt>Object</tt>) <strong>change</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+288
+289
+290</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 288</span>
+
+<span class='def def kw'>def</span> <span class='change identifier id'>change</span>
+  <span class='k_factor identifier id'>k_factor</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span> <span class='mult op'>*</span> <span class='lparen token'>(</span> <span class='result identifier id'>result</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span> <span class='minus op'>-</span> <span class='expected identifier id'>expected</span> <span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="expected-instance_method">
+  
+    - (<tt>Object</tt>) <strong>expected</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+284
+285
+286</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 284</span>
+
+<span class='def def kw'>def</span> <span class='expected identifier id'>expected</span>
+  <span class='float val'>1.0</span> <span class='div op'>/</span> <span class='lparen token'>(</span> <span class='float val'>1.0</span> <span class='plus op'>+</span> <span class='lparen token'>(</span> <span class='float val'>10.0</span> <span class='pow op'>**</span> <span class='lparen token'>(</span><span class='lparen token'>(</span><span class='other_rating identifier id'>other_rating</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span> <span class='minus op'>-</span> <span class='old_rating identifier id'>old_rating</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span><span class='rparen token'>)</span> <span class='div op'>/</span> <span class='float val'>400.0</span><span class='rparen token'>)</span> <span class='rparen token'>)</span> <span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="new_rating-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_rating</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 292</span>
+
+<span class='def def kw'>def</span> <span class='new_rating identifier id'>new_rating</span>
+  <span class='lparen token'>(</span><span class='old_rating identifier id'>old_rating</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span> <span class='plus op'>+</span> <span class='change identifier id'>change</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="result-instance_method">
+  
+    - (<tt>Object</tt>) <strong>result</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+275
+276
+277
+278</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 275</span>
+
+<span class='def def kw'>def</span> <span class='result identifier id'>result</span>
+  <span class='raise identifier id'>raise</span> <span class='dstring node'>&quot;Invalid result: #{@result.inspect}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='valid_result? fid id'>valid_result?</span>
+  <span class='@result ivar id'>@result</span><span class='dot token'>.</span><span class='to_f identifier id'>to_f</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="valid_result?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>valid_result?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+280
+281
+282</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 280</span>
+
+<span class='def def kw'>def</span> <span class='valid_result? fid id'>valid_result?</span>
+  <span class='lparen token'>(</span><span class='integer val'>0</span><span class='dot2 op'>..</span><span class='integer val'>1</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='@result ivar id'>@result</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Mar 14 17:14:15 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

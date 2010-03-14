@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "elo"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{The Elo rating system is a method for calculating the relative skill levels of players in two-player games such as cess and Go.}
+    gem.description = %Q{The Elo rating system is a method for calculating the relative skill levels of players in two-player games such as cess and Go.}
     gem.email = "iain@iain.nl"
     gem.homepage = "http://github.com/iain/elo"
     gem.authors = ["Iain Hecker"]
@@ -34,7 +34,12 @@ task :spec => :check_dependencies
 
 task :default => :spec
 
-require 'rake/rdoctask'
+begin
+  require 'hanna/rdoctask'
+rescue LoadError
+  require 'rake/rdoctask'
+end
+
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 

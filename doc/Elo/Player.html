@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: Elo::Player</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo; 
+    <span class='title'><a href="../Elo.html" title="Elo (module)">Elo</a></span>
+     &raquo; 
+    <span class="title">Player</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Elo::Player 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Elo::Player</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></dd>
+      
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/elo.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+A player. You need at least two play a Game.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+  
+  
+  
+  
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#games-instance_method" title="#games (instance method)">- (Object) <strong>games</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#games_played-instance_method" title="#games_played (instance method)">- (Object) <strong>games_played</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#k_factor-instance_method" title="#k_factor (instance method)">- (Object) <strong>k_factor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#loses_from-instance_method" title="#loses_from (instance method)">- (Object) <strong>loses_from</strong>(other_player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plays_draw-instance_method" title="#plays_draw (instance method)">- (Object) <strong>plays_draw</strong>(other_player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pro%3F-instance_method" title="#pro? (instance method)">- (Boolean) <strong>pro?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pro_rating%3F-instance_method" title="#pro_rating? (instance method)">- (Boolean) <strong>pro_rating?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rating-instance_method" title="#rating (instance method)">- (Object) <strong>rating</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Rating.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">- (Object) <strong>save</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+TODO.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starter%3F-instance_method" title="#starter? (instance method)">- (Boolean) <strong>starter?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#versus-instance_method" title="#versus (instance method)">- (Object) <strong>versus</strong>(other_player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wins_from-instance_method" title="#wins_from (instance method)">- (Object) <strong>wins_from</strong>(other_player) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+  </ul>
+
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <a href="EloHelper.html" title="Elo::EloHelper (module)">EloHelper</a></h3>
+  <p class="inherited"><a href="EloHelper.html#attributes-instance_method" title="Elo::EloHelper#attributes (method)">#attributes</a>, <a href="EloHelper.html#included-class_method" title="Elo::EloHelper.included (method)">included</a>, <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">#initialize</a></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <a href="EloHelper.html#initialize-instance_method" title="Elo::EloHelper#initialize (method)">Elo::EloHelper</a></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="games-instance_method">
+  
+    - (<tt>Object</tt>) <strong>games</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 146</span>
+
+<span class='def def kw'>def</span> <span class='games identifier id'>games</span>
+  <span class='@games ivar id'>@games</span> <span class='opasgn op'>||=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="games_played-instance_method">
+  
+    - (<tt>Object</tt>) <strong>games_played</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 142</span>
+
+<span class='def def kw'>def</span> <span class='games_played identifier id'>games_played</span>
+  <span class='@games_played ivar id'>@games_played</span> <span class='opasgn op'>||=</span> <span class='games identifier id'>games</span><span class='dot token'>.</span><span class='size identifier id'>size</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="k_factor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>k_factor</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 168</span>
+
+<span class='def def kw'>def</span> <span class='k_factor identifier id'>k_factor</span>
+  <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='applied_k_factors identifier id'>applied_k_factors</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='rule identifier id'>rule</span><span class='bitor op'>|</span>
+    <span class='return return kw'>return</span> <span class='rule identifier id'>rule</span><span class='lbrack token'>[</span><span class='symbol val'>:factor</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='rule identifier id'>rule</span><span class='lbrack token'>[</span><span class='symbol val'>:rule</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='default_k_factor identifier id'>default_k_factor</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="loses_from-instance_method">
+  
+    - (<tt>Object</tt>) <strong>loses_from</strong>(other_player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 187</span>
+
+<span class='def def kw'>def</span> <span class='loses_from identifier id'>loses_from</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span>
+  <span class='versus identifier id'>versus</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='lose identifier id'>lose</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="plays_draw-instance_method">
+  
+    - (<tt>Object</tt>) <strong>plays_draw</strong>(other_player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+183
+184
+185</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 183</span>
+
+<span class='def def kw'>def</span> <span class='plays_draw identifier id'>plays_draw</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span>
+  <span class='versus identifier id'>versus</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='draw identifier id'>draw</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="pro?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>pro?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 158</span>
+
+<span class='def def kw'>def</span> <span class='pro? fid id'>pro?</span>
+  <span class='notop op'>!</span><span class='notop op'>!</span><span class='@pro ivar id'>@pro</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="pro_rating?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>pro_rating?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 150</span>
+
+<span class='def def kw'>def</span> <span class='pro_rating? fid id'>pro_rating?</span>
+  <span class='rating identifier id'>rating</span> <span class='gt op'>&gt;</span> <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='pro_rating_boundry identifier id'>pro_rating_boundry</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rating-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rating</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Rating
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 138</span>
+
+<span class='def def kw'>def</span> <span class='rating identifier id'>rating</span>
+  <span class='@rating ivar id'>@rating</span> <span class='opasgn op'>||=</span> <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='default_rating identifier id'>default_rating</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="save-instance_method">
+  
+    - (<tt>Object</tt>) <strong>save</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+TODO
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 163</span>
+
+<span class='def def kw'>def</span> <span class='save identifier id'>save</span>
+  <span class='comment val'># hook for your own model</span>
+  <span class='comment val'># which I don't know yet how to do</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starter?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starter?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154
+155
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 154</span>
+
+<span class='def def kw'>def</span> <span class='starter? fid id'>starter?</span>
+  <span class='games_played identifier id'>games_played</span> <span class='lt op'>&lt;</span> <span class='Elo constant id'>Elo</span><span class='dot token'>.</span><span class='starter_boundry identifier id'>starter_boundry</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="versus-instance_method">
+  
+    - (<tt>Object</tt>) <strong>versus</strong>(other_player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+175
+176
+177</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 175</span>
+
+<span class='def def kw'>def</span> <span class='versus identifier id'>versus</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span>
+  <span class='Game constant id'>Game</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:one</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span><span class='comma token'>,</span> <span class='symbol val'>:two</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="wins_from-instance_method">
+  
+    - (<tt>Object</tt>) <strong>wins_from</strong>(other_player) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/elo.rb', line 179</span>
+
+<span class='def def kw'>def</span> <span class='wins_from identifier id'>wins_from</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span>
+  <span class='versus identifier id'>versus</span><span class='lparen token'>(</span><span class='other_player identifier id'>other_player</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='win identifier id'>win</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Mar 14 17:14:16 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
