@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Elo::Player [elo ]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>Class</span>
+          Elo::Player
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a href="../../files/lib/elo_rb.html">lib/elo.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong>Object</strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <p>
+            A player. You need at least two play a <a href="Game.html">Game</a>.
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000009">games</a></li>
+              <li><a href="#M000008">games_played</a></li>
+              <li><a href="#M000014">k_factor</a></li>
+              <li><a href="#M000018">loses_from</a></li>
+              <li><a href="#M000017">plays_draw</a></li>
+              <li><a href="#M000012">pro?</a></li>
+              <li><a href="#M000010">pro_rating?</a></li>
+              <li><a href="#M000007">rating</a></li>
+              <li><a href="#M000013">save</a></li>
+              <li><a href="#M000011">starter?</a></li>
+              <li><a href="#M000015">versus</a></li>
+              <li><a href="#M000016">wins_from</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+            <div id='includes'>
+              <h2>Included modules</h2>
+              <ol>
+                <li><a href="EloHelper.html">EloHelper</a></li>
+              </ol>
+            </div>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public instance methods</h2>
+              <div class='method public-instance' id='method-M000009'>
+                <a name='M000009'></a>
+                <div class='synopsis'>
+                  <span class='name'>games</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000009-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 146</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">games</span>&#x000A;      <span class="ruby-ivar">@games</span> <span class="ruby-operator">||=</span> []&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000008'>
+                <a name='M000008'></a>
+                <div class='synopsis'>
+                  <span class='name'>games_played</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000008-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 142</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">games_played</span>&#x000A;      <span class="ruby-ivar">@games_played</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">games</span>.<span class="ruby-identifier">size</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000014'>
+                <a name='M000014'></a>
+                <div class='synopsis'>
+                  <span class='name'>k_factor</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 168</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>&#x000A;      <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">applied_k_factors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rule</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">rule</span>[<span class="ruby-identifier">:factor</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>[<span class="ruby-identifier">:rule</span>])&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">default_k_factor</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000018'>
+                <a name='M000018'></a>
+                <div class='synopsis'>
+                  <span class='name'>loses_from</span>
+                  <span class='arguments'>(other_player)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000018-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 187</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loses_from</span>(<span class="ruby-identifier">other_player</span>)&#x000A;      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>).<span class="ruby-identifier">lose</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000017'>
+                <a name='M000017'></a>
+                <div class='synopsis'>
+                  <span class='name'>plays_draw</span>
+                  <span class='arguments'>(other_player)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000017-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 183</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plays_draw</span>(<span class="ruby-identifier">other_player</span>)&#x000A;      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>).<span class="ruby-identifier">draw</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000012'>
+                <a name='M000012'></a>
+                <div class='synopsis'>
+                  <span class='name'>pro?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000012-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 158</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pro?</span>&#x000A;      <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@pro</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000010'>
+                <a name='M000010'></a>
+                <div class='synopsis'>
+                  <span class='name'>pro_rating?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000010-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 150</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pro_rating?</span>&#x000A;      <span class="ruby-identifier">rating</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">pro_rating_boundry</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000007'>
+                <a name='M000007'></a>
+                <div class='synopsis'>
+                  <span class='name'>rating</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  <a href="Rating.html">Rating</a>
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000007-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 138</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rating</span>&#x000A;      <span class="ruby-ivar">@rating</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">default_rating</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000013'>
+                <a name='M000013'></a>
+                <div class='synopsis'>
+                  <span class='name'>save</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  TODO
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 163</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>&#x000A;      <span class="ruby-comment cmt"># hook for your own model</span>&#x000A;      <span class="ruby-comment cmt"># which I don't know yet how to do</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000011'>
+                <a name='M000011'></a>
+                <div class='synopsis'>
+                  <span class='name'>starter?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000011-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 154</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">starter?</span>&#x000A;      <span class="ruby-identifier">games_played</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">starter_boundry</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000015'>
+                <a name='M000015'></a>
+                <div class='synopsis'>
+                  <span class='name'>versus</span>
+                  <span class='arguments'>(other_player)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 175</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>)&#x000A;      <span class="ruby-constant">Game</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:one</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:two</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other_player</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000016'>
+                <a name='M000016'></a>
+                <div class='synopsis'>
+                  <span class='name'>wins_from</span>
+                  <span class='arguments'>(other_player)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 179</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wins_from</span>(<span class="ruby-identifier">other_player</span>)&#x000A;      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>).<span class="ruby-identifier">win</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

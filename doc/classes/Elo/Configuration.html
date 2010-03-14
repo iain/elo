@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Elo::Configuration [elo ]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>Module</span>
+          Elo::Configuration
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a href="../../files/lib/elo_rb.html">lib/elo.rb</a>
+          </li>
+        </ol>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000006">configure</a></li>
+              <li><a href="#M000005">k_factor</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>default_k_factor</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'>
+                      
+                      The default k-factor is chosen when no k-factor rules apply. K-factor rules
+                      can be added by using the <tt><a
+                      href="Configuration.html#M000005">k_factor</a></tt>-method. (default = 15)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>default_rating</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'>
+                      
+                      This is the rating every player starts out with. (default = 1000)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>pro_rating_boundry</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'>
+                      
+                      This is the lower boundry of the rating you need to be a pro player. This
+                      setting is used in the FIDE k-factor rules. (default = 2400)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>starter_boundry</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'>
+                      
+                      This is the lower boundry in the amount of games played to be a starting
+                      player This setting is used in the FIDE k-factor rules. (default = 30)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>use_FIDE_settings</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'>
+                      
+                      Use the settings that FIDE use for determening the K-factor. This is the
+                      case when all settings are unaltered. (default = true)
+                      
+                      <p>
+                      In short:
+                      </p>
+                      <ul>
+                      <li>K-factor is 25 when a player is a starter (less than 30 games played)
+                      
+                      </li>
+                      <li>K-factor is 10 when a player is a pro (rating above 2400, now or in the
+                      past)
+                      
+                      </li>
+                      <li>K-factor is 15 when a player in other cases
+                      
+                      </li>
+                      </ul>
+                      <p>
+                      If you want to use your own settings, either change the boundry settings,
+                      or set this setting to false and add you&#8217;re own k-factor rules.
+                      K-factor rules can be added by using the <tt><a
+                      href="Configuration.html#M000005">k_factor</a></tt>-method.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public instance methods</h2>
+              <div class='method public-instance' id='method-M000006'>
+                <a name='M000006'></a>
+                <div class='synopsis'>
+                  <span class='name'>configure</span>
+                  <span class='arguments'>() {|self| ...}</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Configure <a href="../Elo.html">Elo</a> in a block style.
+                  </p>
+                  <pre>Elo.configure do |config|&#x000A;  config.setting = value&#x000A;end</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000006-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 68</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000005'>
+                <a name='M000005'></a>
+                <div class='synopsis'>
+                  <span class='name'>k_factor</span>
+                  <span class='arguments'>(factor, &amp;rule)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Add a K-factor rule. The first argument is the k-factor value. The block
+                  should return a boolean that determines if this K-factor rule applies. The
+                  first rule that applies is the one determining the K-factor.
+                  </p>
+                  <p>
+                  The block is instance_eval&#8216;ed into the player, so you can access all
+                  it&#8217;s properties directly. The K-factor is recalculated every time a
+                  match is played.
+                  </p>
+                  <p>
+                  By default, the FIDE settings are used (see: <tt>use_FIDE_settings</tt>).
+                  To implement that yourself, you could write:
+                  </p>
+                  <pre>Elo.configure do |config|&#x000A;  config.k_factor(10) { pro? or pro_rating? }&#x000A;  config.k_factor(25) { starter? }&#x000A;  config.default_k_factor = 15&#x000A;end</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000005-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 30</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>(<span class="ruby-identifier">factor</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>)&#x000A;      <span class="ruby-identifier">k_factors</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:factor</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">factor</span>, <span class="ruby-identifier">:rule</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rule</span> }&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

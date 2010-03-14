@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: README.rdoc [elo ]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <div class='name'>README.rdoc</div>
+        <div class='paths'>
+          README.rdoc
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Sun Mar 14 18:44:10 +0100 2010</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="../classes/Elo.html">Elo</a></h1>
+            <p>
+            From <a
+            href="http://en.wikipedia.org/wiki/Elo_rating_system">Wikipedia</a>:
+            </p>
+            <p>
+            The <a href="../classes/Elo.html">Elo</a> rating system is a method for
+            calculating the relative skill levels of players in two-player games such
+            as chess and Go. It is named after its creator Arpad <a
+            href="../classes/Elo.html">Elo</a>, a Hungarian-born American physics
+            professor.
+            </p>
+            <p>
+            The <a href="../classes/Elo.html">Elo</a> system was invented as an
+            improved chess rating system, but today it is also used in many other
+            games. It is also used as a rating system for multiplayer competition in a
+            number of computer games, and has been adapted to team sports including
+            association football, American college football and basketball, and Major
+            League Baseball.
+            </p>
+            <h2>Links</h2>
+            <ul>
+            <li><a href="http://iain.github.com/elo/doc">API documentation</a>
+            
+            </li>
+            <li><a href="http://github.com/iain/elo">Source Code</a>
+            
+            </li>
+            </ul>
+            <h2>Usage</h2>
+            <p>
+            You need to have at least to players that can play a game (duh).
+            </p>
+            <pre>bob  = Elo::Player.new&#x000A;jane = Elo::Player.new(:rating =&gt; 1500)</pre>
+            <p>
+            Once you have players, you can register games in a variaty of ways. There
+            is more than one way to do it, choose whatever works from your other code:
+            </p>
+            <pre>game1 = bob.wins_from(jane)&#x000A;game2 = bob.loses_from(jane)&#x000A;game3 = bob.plays_draw(jane)&#x000A;&#x000A;game4 = bob.versus(jane)&#x000A;game4.winner = jane&#x000A;&#x000A;game5 = bob.versus(jane)&#x000A;game5.loser = jane&#x000A;&#x000A;game6 = bob.versus(jane)&#x000A;game6.draw&#x000A;&#x000A;game7 = bob.versus(jane)&#x000A;game7.result = 1 # result is in perspective of bob, so bob wins</pre>
+            <p>
+            You can get all kinds of info from a player:
+            </p>
+            <pre>bob.rating&#x000A;bob.pro?&#x000A;bob.starter?&#x000A;bob.pro_rating?&#x000A;bob.games_played&#x000A;bob.games</pre>
+            <p>
+            Or get a list of players:
+            </p>
+            <pre>Elo::Player.all</pre>
+            <h2>Configuration</h2>
+            <p>
+            You can configure <a href="../classes/Elo.html">Elo</a> in many ways. In
+            it&#8217;s default configuration, it is configured in the same way as the
+            <a href="http://www.fide.com/">FIDE</a> (World Chess Foundation).
+            </p>
+            <p>
+            Altering settings to your liking is very easy and very flexible. You can
+            even specify your own K-factor rules. Have a look at the Rdoc in the code
+            for a complete reference.
+            </p>
+            <p>
+            Here is an example:
+            </p>
+            <pre>Elo.configure do |config|&#x000A;&#x000A;  # Every player starts with a rating of 1000&#x000A;  config.default_rating = 1000&#x000A;&#x000A;  # A player is considered a pro, when he/she has more than 2400 points&#x000A;  config.pro_rating_boundry = 2400&#x000A;&#x000A;  # A player is considered a new, when he/she has played less than 30 games&#x000A;  config.starter_boundry = 30&#x000A;&#x000A;end</pre>
+            <h2>About the K-factor</h2>
+            <p>
+            The <a href="../classes/Elo.html">Elo</a> rating system knows a variable
+            called the &#8220;K-factor&#8221;. The K-factor is used to reward new
+            talent and stableize the rating once a player is participating longer.
+            </p>
+            <p>
+            FIDE (the World Chess Foundation), gives players with less than 30 played
+            games a K-factor of 25. Normal players get a K-factor of 15 and pro&#8217;s
+            get a K-factor of 10. Once you reach a pro status, you&#8217;re K-factor
+            never changes, even if your rating drops.
+            </p>
+            <p>
+            You need to provide <a href="../classes/Elo.html">Elo</a> the amount of
+            games played, their rating and their pro-status.
+            </p>
+            <pre>bob = Elo::Player.new(:games_played =&gt; 29, :rating =&gt; 2300, :pro =&gt; true)</pre>
+            <p>
+            You can define your own K-factors by adding K-factor rules. This code will
+            change the K-factor to 12, for every player who&#8217;s name starts with a
+            B, and 16 for everybody else.
+            </p>
+            <pre>Elo.configure do |config|&#x000A;  config.k_factor(12) { name =~ /^b/i }&#x000A;  config.default_k_factor = 16&#x000A;  config.use_FIDE_settings = false&#x000A;end</pre>
+            <h2>Installation</h2>
+            <pre>gem install elo</pre>
+            <h2>Note on Patches/Pull Requests</h2>
+            <ul>
+            <li>Fork the project.
+            
+            </li>
+            <li>Make your feature addition or bug fix.
+            
+            </li>
+            <li>Add tests for it. This is important so I don&#8217;t break it in a future
+            version unintentionally.
+            
+            </li>
+            <li>Commit, do not mess with rakefile, version, or history. (if you want to
+            have your own version, that is fine but bump version in a commit by itself
+            I can ignore when I pull)
+            
+            </li>
+            <li>Send me a pull request. Bonus points for topic branches.
+            
+            </li>
+            </ul>
+            <h2>Copyright</h2>
+            <p>
+            Copyright &#169; 2010 Iain Hecker. Released under the MIT License
+            </p>
+          </div>
+          <div id='section'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
