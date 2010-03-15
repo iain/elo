@@ -2,14 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Elo" do
 
-  before do
-    @original = Elo.dup
-  end
-
   after do
-    old_verbose, $VERBOSE = $VERBOSE, nil
-    Elo = @original
-    $VERBOSE = old_verbose
+    Elo.instance_eval { @config = nil }
   end
 
   it "should work as advertised" do
@@ -48,39 +42,43 @@ describe "Elo" do
   describe "Configuration" do
 
     it "default_rating" do
-      Elo.default_rating.should == 1000
-      Elo::Player.new.rating.should == 1000
-      Elo.default_rating = 1337
-      Elo.default_rating.should == 1337
-      Elo::Player.new.rating.should == 1337
+      Elo.config.default_rating.should == 1000
+      Elo::Player.new.rating.should    == 1000
+
+      Elo.config.default_rating = 1337
+
+      Elo.config.default_rating.should == 1337
+      Elo::Player.new.rating.should    == 1337
     end
 
     it "starter_boundry" do
-      Elo.starter_boundry.should == 30
+      Elo.config.starter_boundry.should == 30
       Elo::Player.new(:games_played => 20).should be_starter
 
-      Elo.starter_boundry = 15
+      Elo.config.starter_boundry = 15
 
-      Elo.starter_boundry.should == 15
+      Elo.config.starter_boundry.should == 15
       Elo::Player.new(:games_played => 20).should_not be_starter
     end
 
     it "default_k_factor and FIDE settings" do
-      Elo.use_FIDE_settings.should == true
-      Elo.default_k_factor.should == 15
+      Elo.config.use_FIDE_settings.should    == true
+      Elo.config.default_k_factor.should     == 15
 
-      Elo.default_k_factor = 20
-      Elo.use_FIDE_settings = false
+      Elo.config.default_k_factor = 20
+      Elo.config.use_FIDE_settings = false
 
-      Elo.default_k_factor.should == 20
-      Elo.use_FIDE_settings.should == false
+      Elo.config.default_k_factor.should     == 20
+      Elo.config.use_FIDE_settings.should    == false
       Elo::Player.new.k_factor.should == 20
     end
 
     it "pro_rating_boundry" do
-      Elo.pro_rating_boundry.should == 2400
-      Elo.pro_rating_boundry = 1337
-      Elo.pro_rating_boundry.should == 1337
+      Elo.config.pro_rating_boundry.should == 2400
+
+      Elo.config.pro_rating_boundry = 1337
+
+      Elo.config.pro_rating_boundry.should == 1337
       Elo::Player.new(:rating => 1337).should be_pro_rating
     end
 

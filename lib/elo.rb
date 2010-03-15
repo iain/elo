@@ -2,14 +2,15 @@
 #
 # See README.rdoc for general information about Elo.
 module Elo
+  class Configuration
 
-  @pro_rating_boundry = 2400
-  @starter_boundry    = 30
-  @default_rating     = 1000
-  @default_k_factor   = 15
-  @use_FIDE_settings  = true
-
-  module Configuration
+    def initialize
+      @pro_rating_boundry = 2400
+      @starter_boundry    = 30
+      @default_rating     = 1000
+      @default_k_factor   = 15
+      @use_FIDE_settings  = true
+    end
 
     # Add a K-factor rule. The first argument is the k-factor value.
     # The block should return a boolean that determines if this K-factor rule applies.
@@ -60,15 +61,6 @@ module Elo
     # K-factor rules can be added by using the +k_factor+-method.
     attr_accessor :use_FIDE_settings
 
-    # Configure Elo in a block style.
-    #
-    #   Elo.configure do |config|
-    #     config.setting = value
-    #   end
-    def configure(&block)
-      yield(self)
-    end
-
     def applied_k_factors
       apply_fide_k_factors if use_FIDE_settings
       k_factors
@@ -90,7 +82,19 @@ module Elo
 
   end
 
-  extend Configuration
+  def self.config
+    @config ||= Configuration.new
+  end
+
+  # Configure Elo in a block style.
+  #
+  #   Elo.configure do |config|
+  #     config.setting = value
+  #   end
+  def self.configure(&block)
+    yield(config)
+  end
+
 
   # Common methods for Elo classes.
   module EloHelper
@@ -125,7 +129,7 @@ module Elo
 
     # Rating
     def rating
-      @rating ||= Elo.default_rating
+      @rating ||= Elo.config.default_rating
     end
 
     def games_played
@@ -137,11 +141,11 @@ module Elo
     end
 
     def pro_rating?
-      rating >= Elo.pro_rating_boundry
+      rating >= Elo.config.pro_rating_boundry
     end
 
     def starter?
-      games_played < Elo.starter_boundry
+      games_played < Elo.config.starter_boundry
     end
 
     def pro?
@@ -156,10 +160,10 @@ module Elo
 
     def k_factor
       return @k_factor if @k_factor
-      Elo.applied_k_factors.each do |rule|
+      Elo.config.applied_k_factors.each do |rule|
         return rule[:factor] if instance_eval(&rule[:rule])
       end
-      Elo.default_k_factor
+      Elo.config.default_k_factor
     end
 
     def versus(other_player)
