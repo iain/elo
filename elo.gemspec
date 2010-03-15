@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{elo}
-  s.version = "0.0.2.alpha"
+  s.version = "0.0.3.alpha"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Iain Hecker"]
@@ -36,7 +36,13 @@ Gem::Specification.new do |s|
      "doc/fr_method_index.html",
      "doc/index.html",
      "doc/rdoc-style.css",
+     "elo.gemspec",
      "lib/elo.rb",
+     "lib/elo/configuration.rb",
+     "lib/elo/game.rb",
+     "lib/elo/helper.rb",
+     "lib/elo/player.rb",
+     "lib/elo/rating.rb",
      "spec/elo_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
