@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Elo::Game [elo ]</title>
+    <title>
+      : Elo::Game [elo 0.0.3.alpha
+      ]
+    </title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,7 +34,7 @@
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../files/lib/elo_rb.html">lib/elo.rb</a>
+            <a href="../../files/lib/elo/game_rb.html">lib/elo/game.rb</a>
           </li>
         </ol>
         <div class='parent'>
@@ -41,143 +44,230 @@
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='description'>
+            <p>
+            A <a href="Game.html">Game</a> is a collection of two <a
+            href="Player.html">Elo::Player</a> objects and a result. Once the result is
+            known, it propagates the new ratings to the players.
+            </p>
+          </div>
           <div id='method-list'>
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000027">draw</a></li>
-              <li><a href="#M000026">lose</a></li>
-              <li><a href="#M000030">loser=</a></li>
-              <li><a href="#M000031">new_rating</a></li>
-              <li><a href="#M000024">result=</a></li>
-              <li><a href="#M000028">save</a></li>
-              <li><a href="#M000025">win</a></li>
-              <li><a href="#M000029">winner=</a></li>
+              <li><a href="#M000024">draw</a></li>
+              <li><a href="#M000023">lose</a></li>
+              <li><a href="#M000027">loser=</a></li>
+              <li><a href="#M000020">process_result</a></li>
+              <li><a href="#M000028">ratings</a></li>
+              <li><a href="#M000021">result=</a></li>
+              <li><a href="#M000025">save</a></li>
+              <li><a href="#M000022">win</a></li>
+              <li><a href="#M000026">winner=</a></li>
             </ol>
           </div>
           <div id='context'>
             <div id='includes'>
               <h2>Included modules</h2>
               <ol>
-                <li><a href="EloHelper.html">EloHelper</a></li>
+                <li><a href="Helper.html">Helper</a></li>
               </ol>
             </div>
           </div>
           <div id='section'>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>one</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The first <a href="Player.html">Elo::Player</a>. The result is in
+                      perspecive of this player.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>result</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The result is the result of the match. It&#8217;s a nubmer from 0 to 1 from
+                      the perspective of player <tt>:one</tt>.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>two</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The second <a href="Player.html">Elo::Player</a>.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000027'>
-                <a name='M000027'></a>
+              <div class='method public-instance' id='method-M000024'>
+                <a name='M000024'></a>
                 <div class='synopsis'>
                   <span class='name'>draw</span>
                   <span class='arguments'>()</span>
                 </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000027-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 229</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">result</span> = <span class="ruby-value">0</span><span class="ruby-value">.5</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000026'>
-                <a name='M000026'></a>
-                <div class='synopsis'>
-                  <span class='name'>lose</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000026-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 225</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lose</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">result</span> = <span class="ruby-value">0</span><span class="ruby-value">.0</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000030'>
-                <a name='M000030'></a>
-                <div class='synopsis'>
-                  <span class='name'>loser=</span>
-                  <span class='arguments'>(player)</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000030-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000030-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 241</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loser=</span>(<span class="ruby-identifier">player</span>)&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">result</span> = (<span class="ruby-identifier">player</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:one</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1.0</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000031'>
-                <a name='M000031'></a>
-                <div class='synopsis'>
-                  <span class='name'>new_rating</span>
-                  <span class='arguments'>(player)</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000031-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000031-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 245</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_rating</span>(<span class="ruby-identifier">player</span>)&#x000A;      <span class="ruby-identifier">ratings</span>[<span class="ruby-identifier">player</span>].<span class="ruby-identifier">new_rating</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000024'>
-                <a name='M000024'></a>
-                <div class='synopsis'>
-                  <span class='name'>result=</span>
-                  <span class='arguments'>(result)</span>
-                </div>
                 <div class='description'>
                   <p>
-                  Result is from the perspective of player one.
+                  It was a draw. This is a shortcut method for setting the score to 0.5
                   </p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000024-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000024-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 214</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">result=</span>(<span class="ruby-identifier">result</span>)&#x000A;      <span class="ruby-ivar">@result</span> = <span class="ruby-identifier">result</span>&#x000A;      <span class="ruby-identifier">one</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:played</span>, <span class="ruby-keyword kw">self</span>)&#x000A;      <span class="ruby-identifier">two</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:played</span>, <span class="ruby-keyword kw">self</span>)&#x000A;      <span class="ruby-identifier">save</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000024-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 47</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw</span>&#x000A;      <span class="ruby-identifier">process_result</span> <span class="ruby-value">0</span><span class="ruby-value">.5</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000023'>
+                <a name='M000023'></a>
+                <div class='synopsis'>
+                  <span class='name'>lose</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  <a href="Player.html">Player</a> <tt>:one</tt> has lost! This is a shortcut
+                  method for setting the score to 0
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000023-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000023-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 41</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lose</span>&#x000A;      <span class="ruby-identifier">process_result</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000027'>
+                <a name='M000027'></a>
+                <div class='synopsis'>
+                  <span class='name'>loser=</span>
+                  <span class='arguments'>(player)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Set the loser. Provide it with a <a href="Player.html">Elo::Player</a>.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000027-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 63</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loser=</span>(<span class="ruby-identifier">player</span>)&#x000A;      <span class="ruby-identifier">process_result</span>(<span class="ruby-identifier">player</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">one</span> <span class="ruby-value">? </span><span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1.0</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000020'>
+                <a name='M000020'></a>
+                <div class='synopsis'>
+                  <span class='name'>process_result</span>
+                  <span class='arguments'>(result)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Every time a result is set, it tells the <a
+                  href="Player.html">Elo::Player</a> objects to update their scores.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000020-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000020-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 24</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_result</span>(<span class="ruby-identifier">result</span>)&#x000A;      <span class="ruby-ivar">@result</span> = <span class="ruby-identifier">result</span>&#x000A;      <span class="ruby-identifier">one</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:played</span>, <span class="ruby-keyword kw">self</span>)&#x000A;      <span class="ruby-identifier">two</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:played</span>, <span class="ruby-keyword kw">self</span>)&#x000A;      <span class="ruby-identifier">save</span>&#x000A;      <span class="ruby-keyword kw">self</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-M000028'>
                 <a name='M000028'></a>
                 <div class='synopsis'>
-                  <span class='name'>save</span>
+                  <span class='name'>ratings</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='description'>
                   <p>
-                  TODO
+                  Access the <a href="Rating.html">Elo::Rating</a> objects for both players.
                   </p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000028-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000028-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 234</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000028-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 68</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ratings</span>&#x000A;      <span class="ruby-ivar">@ratings</span> <span class="ruby-operator">||=</span> { <span class="ruby-identifier">one</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rating_one</span>, <span class="ruby-identifier">two</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rating_two</span> }&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000021'>
+                <a name='M000021'></a>
+                <div class='synopsis'>
+                  <span class='name'>result=</span>
+                  <span class='arguments'>(result)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Alias for <a href="Game.html#M000020">process_result</a>
+                  </p>
                 </div>
               </div>
               <div class='method public-instance' id='method-M000025'>
                 <a name='M000025'></a>
                 <div class='synopsis'>
-                  <span class='name'>win</span>
+                  <span class='name'>save</span>
                   <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  You can override this method if you store each game in a database or
+                  something like that. This method will be called when a result is known.
+                  </p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000025-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000025-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 221</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">win</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">result</span> = <span class="ruby-value">1.0</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000025-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 54</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000029'>
-                <a name='M000029'></a>
+              <div class='method public-instance' id='method-M000022'>
+                <a name='M000022'></a>
+                <div class='synopsis'>
+                  <span class='name'>win</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  <a href="Player.html">Player</a> <tt>:one</tt> has won! This is a shortcut
+                  method for setting the score to 1
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000022-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000022-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 35</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">win</span>&#x000A;      <span class="ruby-identifier">process_result</span> <span class="ruby-value">1.0</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000026'>
+                <a name='M000026'></a>
                 <div class='synopsis'>
                   <span class='name'>winner=</span>
                   <span class='arguments'>(player)</span>
                 </div>
+                <div class='description'>
+                  <p>
+                  Set the winner. Provide it with a <a href="Player.html">Elo::Player</a>.
+                  </p>
+                </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000029-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000029-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 237</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">winner=</span>(<span class="ruby-identifier">player</span>)&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">result</span> = (<span class="ruby-identifier">player</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:one</span> <span class="ruby-operator">?</span> <span class="ruby-value">1.0</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000026-source'><span class="ruby-comment cmt"># File lib/elo/game.rb, line 58</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">winner=</span>(<span class="ruby-identifier">player</span>)&#x000A;      <span class="ruby-identifier">process_result</span>(<span class="ruby-identifier">player</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">one</span> <span class="ruby-value">? </span><span class="ruby-value">1.0</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

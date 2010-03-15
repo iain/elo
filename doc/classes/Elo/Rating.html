@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Elo::Rating [elo ]</title>
+    <title>
+      : Elo::Rating [elo 0.0.3.alpha
+      ]
+    </title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,7 +34,7 @@
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../files/lib/elo_rb.html">lib/elo.rb</a>
+            <a href="../../files/lib/elo/rating_rb.html">lib/elo/rating.rb</a>
           </li>
         </ol>
         <div class='parent'>
@@ -41,91 +44,79 @@
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='description'>
+            <p>
+            This class calculates the rating between two players, but only from one
+            persons perspective. You need two Rating-instances to calculate ratings for
+            both players. Luckily, <a href="Game.html">Elo::Game</a> handles this for
+            you automatically.
+            </p>
+          </div>
           <div id='method-list'>
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000022">change</a></li>
-              <li><a href="#M000021">expected</a></li>
-              <li><a href="#M000023">new_rating</a></li>
-              <li><a href="#M000019">result</a></li>
-              <li><a href="#M000020">valid_result?</a></li>
+              <li><a href="#M000019">new_rating</a></li>
             </ol>
           </div>
           <div id='context'>
             <div id='includes'>
               <h2>Included modules</h2>
               <ol>
-                <li><a href="EloHelper.html">EloHelper</a></li>
+                <li><a href="Helper.html">Helper</a></li>
               </ol>
             </div>
           </div>
           <div id='section'>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>k_factor</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The k-factor you wish to use for this calculation.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>old_rating</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The rating of the player you wish to calculate.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>other_rating</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The rating of the player you DON&#8220;T wish to calculate.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000022'>
-                <a name='M000022'></a>
-                <div class='synopsis'>
-                  <span class='name'>change</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000022-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000022-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 288</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change</span>&#x000A;      <span class="ruby-identifier">k_factor</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">*</span> ( <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">expected</span> )&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000021'>
-                <a name='M000021'></a>
-                <div class='synopsis'>
-                  <span class='name'>expected</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000021-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000021-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 284</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">expected</span>&#x000A;      <span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> ( <span class="ruby-value">1.0</span> <span class="ruby-operator">+</span> ( <span class="ruby-value">10.0</span> <span class="ruby-operator">**</span> ((<span class="ruby-identifier">other_rating</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_rating</span>.<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">/</span> <span class="ruby-value">400.0</span>) ) )&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000023'>
-                <a name='M000023'></a>
+              <div class='method public-instance' id='method-M000019'>
+                <a name='M000019'></a>
                 <div class='synopsis'>
                   <span class='name'>new_rating</span>
                   <span class='arguments'>()</span>
                 </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000023-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000023-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 292</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_rating</span>&#x000A;      (<span class="ruby-identifier">old_rating</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">change</span>).<span class="ruby-identifier">to_i</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000019'>
-                <a name='M000019'></a>
-                <div class='synopsis'>
-                  <span class='name'>result</span>
-                  <span class='arguments'>()</span>
+                <div class='description'>
+                  <p>
+                  The new rating is... wait for it... the new rating!
+                  </p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000019-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000019-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 275</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">result</span>&#x000A;      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid result: #{@result.inspect}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">valid_result?</span>&#x000A;      <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">to_f</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000020'>
-                <a name='M000020'></a>
-                <div class='synopsis'>
-                  <span class='name'>valid_result?</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000020-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000020-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 280</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_result?</span>&#x000A;      (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>).<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@result</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000019-source'><span class="ruby-comment cmt"># File lib/elo/rating.rb, line 21</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_rating</span>&#x000A;      (<span class="ruby-identifier">old_rating</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">change</span>).<span class="ruby-identifier">to_i</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

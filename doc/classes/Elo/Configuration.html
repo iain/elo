@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Elo::Configuration [elo ]</title>
+    <title>
+      : Elo::Configuration [elo 0.0.3.alpha
+      ]
+    </title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -26,14 +29,18 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Module</span>
+          <span class='type'>Class</span>
           Elo::Configuration
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../files/lib/elo_rb.html">lib/elo.rb</a>
+            <a href="../../files/lib/elo/configuration_rb.html">lib/elo/configuration.rb</a>
           </li>
         </ol>
+        <div class='parent'>
+          Parent:
+          <strong>Object</strong>
+        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -41,8 +48,7 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000006">configure</a></li>
-              <li><a href="#M000005">k_factor</a></li>
+              <li><a href="#M000018">k_factor</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -57,7 +63,7 @@
                       
                       The default k-factor is chosen when no k-factor rules apply. K-factor rules
                       can be added by using the <tt><a
-                      href="Configuration.html#M000005">k_factor</a></tt>-method. (default = 15)
+                      href="Configuration.html#M000018">k_factor</a></tt>-method. (default = 15)
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -113,7 +119,7 @@
                       If you want to use your own settings, either change the boundry settings,
                       or set this setting to false and add you&#8217;re own k-factor rules.
                       K-factor rules can be added by using the <tt><a
-                      href="Configuration.html#M000005">k_factor</a></tt>-method.
+                      href="Configuration.html#M000018">k_factor</a></tt>-method.
                       </p>
                     </td>
                   </tr>
@@ -122,27 +128,8 @@
             </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000006'>
-                <a name='M000006'></a>
-                <div class='synopsis'>
-                  <span class='name'>configure</span>
-                  <span class='arguments'>() {|self| ...}</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Configure <a href="../Elo.html">Elo</a> in a block style.
-                  </p>
-                  <pre>Elo.configure do |config|&#x000A;  config.setting = value&#x000A;end</pre>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000006-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 68</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;      <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000005'>
-                <a name='M000005'></a>
+              <div class='method public-instance' id='method-M000018'>
+                <a name='M000018'></a>
                 <div class='synopsis'>
                   <span class='name'>k_factor</span>
                   <span class='arguments'>(factor, &amp;rule)</span>
@@ -165,10 +152,10 @@
                   <pre>Elo.configure do |config|&#x000A;  config.k_factor(10) { pro? or pro_rating? }&#x000A;  config.k_factor(25) { starter? }&#x000A;  config.default_k_factor = 15&#x000A;end</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000005-source'><span class="ruby-comment cmt"># File lib/elo.rb, line 30</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>(<span class="ruby-identifier">factor</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>)&#x000A;      <span class="ruby-identifier">k_factors</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:factor</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">factor</span>, <span class="ruby-identifier">:rule</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rule</span> }&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000018-source'><span class="ruby-comment cmt"># File lib/elo/configuration.rb, line 58</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>(<span class="ruby-identifier">factor</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>)&#x000A;      <span class="ruby-identifier">k_factors</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:factor</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">factor</span>, <span class="ruby-identifier">:rule</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rule</span> }&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

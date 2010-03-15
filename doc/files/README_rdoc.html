@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: README.rdoc [elo ]</title>
+    <title>
+      File: README.rdoc [elo 0.0.3.alpha
+      ]
+    </title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,7 +34,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Sun Mar 14 18:44:10 +0100 2010</span>
+          <span class='datetime'>Mon Mar 15 21:48:41 +0100 2010</span>
         </div>
       </div>
       <div id='content'>
@@ -79,11 +82,11 @@
             <p>
             You can get all kinds of info from a player:
             </p>
-            <pre>bob.rating&#x000A;bob.pro?&#x000A;bob.starter?&#x000A;bob.pro_rating?&#x000A;bob.games_played&#x000A;bob.games</pre>
+            <pre>bob.rating       # =&gt; 1084&#x000A;bob.pro?         # =&gt; false&#x000A;bob.starter?     # =&gt; true&#x000A;bob.games_played # =&gt; 7&#x000A;bob.games        # =&gt; [ game1, game2, ... game7 ]</pre>
             <p>
             Or get a list of players:
             </p>
-            <pre>Elo::Player.all</pre>
+            <pre>Elo::Player.all  # =&gt; [ bob, jane ]&#x000A;Elo::Game.all    # =&gt; [ game1, game2, ... game7 ]</pre>
             <h2>Configuration</h2>
             <p>
             You can configure <a href="../classes/Elo.html">Elo</a> in many ways. In
@@ -115,13 +118,13 @@
             You need to provide <a href="../classes/Elo.html">Elo</a> the amount of
             games played, their rating and their pro-status.
             </p>
-            <pre>bob = Elo::Player.new(:games_played =&gt; 29, :rating =&gt; 2300, :pro =&gt; true)</pre>
+            <pre>bob = Elo::Player.new(:games_played =&gt; 29, :rating =&gt; 2399, :pro =&gt; true)&#x000A;bob.k_factor == 10</pre>
             <p>
             You can define your own K-factors by adding K-factor rules. This code will
-            change the K-factor to 12, for every player who&#8217;s name starts with a
-            B, and 16 for everybody else.
+            change the K-factor to 12, for every player that played less than 10 games,
+            and 16 for everybody else.
             </p>
-            <pre>Elo.configure do |config|&#x000A;  config.k_factor(12) { name =~ /^b/i }&#x000A;  config.default_k_factor = 16&#x000A;  config.use_FIDE_settings = false&#x000A;end</pre>
+            <pre>Elo.configure do |config|&#x000A;  config.k_factor(12) { games_played &lt; 10 }&#x000A;  config.default_k_factor = 16&#x000A;  config.use_FIDE_settings = false&#x000A;end</pre>
             <h2>Installation</h2>
             <pre>gem install elo</pre>
             <h2>Note on Patches/Pull Requests</h2>
