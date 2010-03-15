@@ -45,16 +45,16 @@ There is more than one way to do it, choose whatever works from your other code:
 
 You can get all kinds of info from a player:
 
-  bob.rating
-  bob.pro?
-  bob.starter?
-  bob.pro_rating?
-  bob.games_played
-  bob.games
+  bob.rating       # => 1084
+  bob.pro?         # => false
+  bob.starter?     # => true
+  bob.games_played # => 7
+  bob.games        # => [ game1, game2, ... game7 ]
 
 Or get a list of players:
 
-  Elo::Player.all
+  Elo::Player.all  # => [ bob, jane ]
+  Elo::Game.all    # => [ game1, game2, ... game7 ]
 
 
 == Configuration
@@ -91,14 +91,15 @@ Once you reach a pro status, you're K-factor never changes, even if your rating 
 
 You need to provide Elo the amount of games played, their rating and their pro-status.
 
-  bob = Elo::Player.new(:games_played => 29, :rating => 2300, :pro => true)
+  bob = Elo::Player.new(:games_played => 29, :rating => 2399, :pro => true)
+  bob.k_factor == 10
 
 You can define your own K-factors by adding K-factor rules.
-This code will change the K-factor to 12, for every player who's name starts with a B,
-and 16 for everybody else.
+This code will change the K-factor to 12, for every player that played less than 10
+games, and 16 for everybody else.
 
   Elo.configure do |config|
-    config.k_factor(12) { name =~ /^b/i }
+    config.k_factor(12) { games_played < 10 }
     config.default_k_factor = 16
     config.use_FIDE_settings = false
   end

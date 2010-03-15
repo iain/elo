@@ -69,15 +69,15 @@ module Elo
       yield(self)
     end
 
+    def applied_k_factors
+      apply_fide_k_factors if use_FIDE_settings
+      k_factors
+    end
+
     private
 
     def k_factors
       @k_factors ||= []
-    end
-
-    def applied_k_factors
-      apply_fide_k_factors if use_FIDE_settings
-      k_factors
     end
 
     def apply_fide_k_factors
@@ -100,24 +100,13 @@ module Elo
     end
 
     # Every object can be initialized with a hash, just like in ActiveRecord.
-    def initialize(attributes)
-      @attributes == attributes.keys
+    def initialize(attributes = {})
       attributes.each do |key, value|
-        self.class.attr_reader key
         instance_variable_set("@#{key}", value)
       end
       self.class.all << self
     end
 
-    # Get a hash of all attributes provided
-    def attributes
-      hash = {}
-      @attributes.each do |attribute|
-        hash.update attribute => send(attribute)
-      end
-      hash
-    end
-    
     module ClassMethods
 
       # Provides a list of all instantiated objects of the class.
@@ -148,7 +137,7 @@ module Elo
     end
 
     def pro_rating?
-      rating > Elo.pro_rating_boundry
+      rating >= Elo.pro_rating_boundry
     end
 
     def starter?
@@ -166,6 +155,7 @@ module Elo
     end
 
     def k_factor
+      return @k_factor if @k_factor
       Elo.applied_k_factors.each do |rule|
         return rule[:factor] if instance_eval(&rule[:rule])
       end
@@ -196,7 +186,7 @@ module Elo
     # This method is private, because it is called automatically.
     # Therefore it is not part of the public API of Elo.
     def played(game)
-      games_played += 1
+      @games_played = games_played + 1
       games << game
       @rating = game.new_rating(self)
       @pro    = true if pro_rating?
@@ -210,24 +200,34 @@ module Elo
 
     include EloHelper
 
+    def inspect
+      [one.rating, two.rating, result].join('::')
+    end
+
+    attr_reader :result
+    attr_reader :one
+    attr_reader :two
+
     # Result is from the perspective of player one.
-    def result=(result)
+    def process_result(result)
       @result = result
       one.send(:played, self)
       two.send(:played, self)
       save
+      self
     end
+    alias result= process_result
 
     def win
-      self.result = 1.0
+      process_result 1.0
     end
 
     def lose
-      self.result = 0.0
+      process_result 0.0
     end
 
     def draw
-      self.result = 0.5
+      process_result 0.5
     end
 
     # TODO
@@ -235,11 +235,11 @@ module Elo
     end
 
     def winner=(player)
-      self.result = (player == :one ? 1.0 : 0.0)
+      process_result(player == :one ? 1.0 : 0.0)
     end
 
     def loser=(player)
-      self.result = (player == :one ? 0.0 : 1.0)
+      process_result(player == :one ? 0.0 : 1.0)
     end
 
     def new_rating(player)
@@ -271,6 +271,10 @@ module Elo
   class Rating
 
     include EloHelper
+
+    attr_reader :other_rating
+    attr_reader :old_rating
+    attr_reader :k_factor
 
     def result
       raise "Invalid result: #{@result.inspect}" unless valid_result?
