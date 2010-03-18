@@ -23,12 +23,18 @@ module Elo
 		# objects to update their scores.
     def process_result(result)
       @result = result
-      one.send(:played, self)
-      two.send(:played, self)
-      save
-      self
+      calculate
     end
     alias result= process_result
+
+    def calculate
+      if result
+        one.send(:played, self)
+        two.send(:played, self)
+        save
+      end
+      self
+    end
 
 		# Player +:one+ has won!
 		# This is a shortcut method for setting the score to 1
@@ -67,6 +73,10 @@ module Elo
 		# Access the Elo::Rating objects for both players.
     def ratings
       @ratings ||= { one => rating_one, two => rating_two }
+    end
+
+    def inspect
+      "game"
     end
 
     private
