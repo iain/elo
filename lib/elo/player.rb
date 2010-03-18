@@ -68,26 +68,30 @@ module Elo
 
 		# Start a game with another player. At this point, no
 		# result is known and nothing really happens.
-    def versus(other_player)
-      Game.new(:one => self, :two => other_player)
+    def versus(other_player, options = {})
+      Game.new(options.merge(:one => self, :two => other_player)).calculate
     end
 
 		# Start a game with another player and set the score
 		# immediately.
-    def wins_from(other_player)
-      versus(other_player).win
+    def wins_from(other_player, options = {})
+      versus(other_player, options).win
     end
 
 		# Start a game with another player and set the score
 		# immediately.
-    def plays_draw(other_player)
-      versus(other_player).draw
+    def plays_draw(other_player, options = {})
+      versus(other_player, options).draw
     end
 
 		# Start a game with another player and set the score
 		# immediately.
-    def loses_from(other_player)
-      versus(other_player).lose
+    def loses_from(other_player, options = {})
+      versus(other_player, options).lose
+    end
+
+    def inspect
+      "player"
     end
 
     private

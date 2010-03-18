@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{elo}
-  s.version = "0.0.3.alpha"
+  s.version = "0.1.0"
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Iain Hecker"]
-  s.date = %q{2010-03-15}
+  s.date = %q{2010-03-18}
   s.description = %q{The Elo rating system is a method for calculating the relative skill levels of players in two-player games such as cess and Go.}
   s.email = %q{iain@iain.nl}
   s.extra_rdoc_files = [

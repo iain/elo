@@ -43,18 +43,20 @@ There is more than one way to do it, choose whatever works from your other code:
   game7 = bob.versus(jane)
   game7.result = 1 # result is in perspective of bob, so bob wins
 
+  game8 = bob.versus(jane, :result => 0) # jane wins
+
 You can get all kinds of info from a player:
 
-  bob.rating       # => 1084
+  bob.rating       # => 1080
   bob.pro?         # => false
   bob.starter?     # => true
-  bob.games_played # => 7
-  bob.games        # => [ game1, game2, ... game7 ]
+  bob.games_played # => 8
+  bob.games        # => [ game1, game2, ... game8 ]
 
 Or get a list of players:
 
   Elo::Player.all  # => [ bob, jane ]
-  Elo::Game.all    # => [ game1, game2, ... game7 ]
+  Elo::Game.all    # => [ game1, game2, ... game8 ]
 
 
 == Configuration

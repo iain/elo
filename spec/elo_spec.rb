@@ -27,15 +27,17 @@ describe "Elo" do
     game7 = bob.versus(jane)
     game7.result = 1
 
-    bob.rating.should == 1084
-    jane.rating.should == 1409
+    game8 = bob.versus(jane, :result => 0)
+
+    bob.rating.should == 1080
+    jane.rating.should == 1412
     bob.should_not be_pro
     bob.should be_starter
-    bob.games_played.should == 7
-    bob.games.should == [ game1, game2, game3, game4, game5, game6, game7 ]
+    bob.games_played.should == 8
+    bob.games.should == [ game1, game2, game3, game4, game5, game6, game7, game8 ]
 
     Elo::Player.all.should == [ bob, jane ]
-    Elo::Game.all.should == [ game1, game2, game3, game4, game5, game6, game7 ]
+    Elo::Game.all.should == [ game1, game2, game3, game4, game5, game6, game7, game8 ]
 
   end
 
