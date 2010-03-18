@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Elo::Player</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/elo/player_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/elo/player.rb">lib/elo/player.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000019">#games</a></li>
+					
+					<li><a href="#M000018">#games_played</a></li>
+					
+					<li><a href="#M000033">#inspect</a></li>
+					
+					<li><a href="#M000028">#k_factor</a></li>
+					
+					<li><a href="#M000032">#loses_from</a></li>
+					
+					<li><a href="#M000038">#played</a></li>
+					
+					<li><a href="#M000031">#plays_draw</a></li>
+					
+					<li><a href="#M000022">#pro?</a></li>
+					
+					<li><a href="#M000020">#pro_rating?</a></li>
+					
+					<li><a href="#M000017">#rating</a></li>
+					
+					<li><a href="#M000023">#save</a></li>
+					
+					<li><a href="#M000021">#starter?</a></li>
+					
+					<li><a href="#M000029">#versus</a></li>
+					
+					<li><a href="#M000030">#wins_from</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="../Elo.html">Elo</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Elo.html">Elo</a></li>
+				
+					<li><a href="../Elo/Configuration.html">Elo::Configuration</a></li>
+				
+					<li><a href="../Elo/Game.html">Elo::Game</a></li>
+				
+					<li><a href="../Elo/Helper.html">Elo::Helper</a></li>
+				
+					<li><a href="../Elo/Helper/ClassMethods.html">Elo::Helper::ClassMethods</a></li>
+				
+					<li><a href="../Elo/Player.html">Elo::Player</a></li>
+				
+					<li><a href="../Elo/Rating.html">Elo::Rating</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Elo::Player</h1>
+
+		<div id="description">
+			<p>
+A player. You need at least two play a <a href="Game.html">Game</a>.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="games-method" class="method-detail ">
+				<a name="M000019"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">games</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A list of games played by the player.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="games-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 19</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">games</span>
+      <span class="ruby-ivar">@games</span> <span class="ruby-operator">||=</span> []
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="games-played-method" class="method-detail ">
+				<a name="M000018"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">games_played</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The number of games played is needed for calculating the K-factor.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="games-played-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">games_played</span>
+      <span class="ruby-ivar">@games_played</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">games</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="inspect-method" class="method-detail ">
+				<a name="M000033"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">inspect</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="inspect-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 93</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+      <span class="ruby-value str">&quot;player&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="k-factor-method" class="method-detail ">
+				<a name="M000028"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">k_factor</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Calculates the K-factor for the player. <a href="../Elo.html">Elo</a>
+allows you specify custom Rules (see <a
+href="Configuration.html">Elo::Configuration</a>).
+</p>
+<p>
+You can set it manually, if you wish:
+</p>
+<pre>
+            Elo::Player.new(:k_factor =&gt; 10)
+
+    This stops this player from using the K-factor rules.
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="k-factor-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 61</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@k_factor</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@k_factor</span>
+      <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">applied_k_factors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rule</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">rule</span>[<span class="ruby-identifier">:factor</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>[<span class="ruby-identifier">:rule</span>])
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">default_k_factor</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="loses-from-method" class="method-detail ">
+				<a name="M000032"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">loses_from</span><span
+						class="method-args">(other_player, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start a game with another player and set the score immediately.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="loses-from-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 89</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loses_from</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">lose</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="plays-draw-method" class="method-detail ">
+				<a name="M000031"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">plays_draw</span><span
+						class="method-args">(other_player, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start a game with another player and set the score immediately.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="plays-draw-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 83</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">plays_draw</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">draw</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="pro--method" class="method-detail ">
+				<a name="M000022"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">pro?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+FIDE regulations specify that once you reach a pro status (see
+<tt>pro_rating?</tt>), you are considered a pro for life.
+</p>
+<p>
+You might need to specify it manually, when depending on external
+persistence of players.
+</p>
+<pre>
+            Elo::Player.new(:pro =&gt; true)
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="pro--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 43</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pro?</span>
+      <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@pro</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="pro-rating--method" class="method-detail ">
+				<a name="M000020"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">pro_rating?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Is the player considered a pro, because his/her rating crossed the
+threshold configured? This is needed for calculating the K-factor.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="pro-rating--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 25</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pro_rating?</span>
+      <span class="ruby-identifier">rating</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">pro_rating_boundry</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="rating-method" class="method-detail ">
+				<a name="M000017"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">rating</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The rating you provided, or the default rating from configuration
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="rating-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 9</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rating</span>
+      <span class="ruby-ivar">@rating</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">default_rating</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="save-method" class="method-detail ">
+				<a name="M000023"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">save</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+You can override this method if you store each game in a database or
+something like that. This method will be called when a result is known.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="save-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 50</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="starter--method" class="method-detail ">
+				<a name="M000021"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">starter?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Is the player just starting? Provide the boundry for the amount of games
+played in the configuration. This is needed for calculating the K-factor.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="starter--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 32</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">starter?</span>
+      <span class="ruby-identifier">games_played</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Elo</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">starter_boundry</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="versus-method" class="method-detail ">
+				<a name="M000029"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">versus</span><span
+						class="method-args">(other_player, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start a game with another player. At this point, no result is known and
+nothing really happens.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="versus-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 71</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span> = {})
+      <span class="ruby-constant">Game</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:one</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:two</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other_player</span>)).<span class="ruby-identifier">calculate</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="wins-from-method" class="method-detail ">
+				<a name="M000030"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">wins_from</span><span
+						class="method-args">(other_player, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start a game with another player and set the score immediately.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="wins-from-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 77</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wins_from</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span> = {})
+      <span class="ruby-identifier">versus</span>(<span class="ruby-identifier">other_player</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">win</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="played-method" class="method-detail ">
+				<a name="M000038"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">played</span><span
+						class="method-args">(game)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A <a href="Game.html">Game</a> tells the players informed to update their
+scores, after it knows the result (so it can calculate the rating).
+</p>
+<p>
+This method is private, because it is called automatically. Therefore it is
+not part of the public API of <a href="../Elo.html">Elo</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="played-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/player.rb, line 104</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">played</span>(<span class="ruby-identifier">game</span>)
+      <span class="ruby-ivar">@games_played</span> = <span class="ruby-identifier">games_played</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">games</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">game</span>
+      <span class="ruby-ivar">@rating</span> = <span class="ruby-identifier">game</span>.<span class="ruby-identifier">ratings</span>[<span class="ruby-keyword kw">self</span>].<span class="ruby-identifier">new_rating</span>
+      <span class="ruby-ivar">@pro</span>    = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pro_rating?</span>
+      <span class="ruby-identifier">save</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

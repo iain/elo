@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Elo::Rating</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/elo/rating_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/elo/rating.rb">lib/elo/rating.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000039">#change</a></li>
+					
+					<li><a href="#M000037">#expected</a></li>
+					
+					<li><a href="#M000034">#new_rating</a></li>
+					
+					<li><a href="#M000035">#result</a></li>
+					
+					<li><a href="#M000036">#valid_result?</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="../Elo.html">Elo</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Elo.html">Elo</a></li>
+				
+					<li><a href="../Elo/Configuration.html">Elo::Configuration</a></li>
+				
+					<li><a href="../Elo/Game.html">Elo::Game</a></li>
+				
+					<li><a href="../Elo/Helper.html">Elo::Helper</a></li>
+				
+					<li><a href="../Elo/Helper/ClassMethods.html">Elo::Helper::ClassMethods</a></li>
+				
+					<li><a href="../Elo/Player.html">Elo::Player</a></li>
+				
+					<li><a href="../Elo/Rating.html">Elo::Rating</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Elo::Rating</h1>
+
+		<div id="description">
+			<p>
+This class calculates the rating between two players, but only from one
+persons perspective. You need two Rating-instances to calculate ratings for
+both players. Luckily, <a href="Game.html">Elo::Game</a> handles this for
+you automatically.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="other-rating-attribute-method" class="method-detail">
+				<a name="other_rating"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">other_rating</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The rating of the player you DON&#8220;T wish to calculate.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="old-rating-attribute-method" class="method-detail">
+				<a name="old_rating"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">old_rating</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The rating of the player you wish to calculate.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="k-factor-attribute-method" class="method-detail">
+				<a name="k_factor"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">k_factor</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The k-factor you wish to use for this calculation.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="new-rating-method" class="method-detail ">
+				<a name="M000034"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_rating</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The new rating is... wait for it... the new rating!
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-rating-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/rating.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_rating</span>
+      (<span class="ruby-identifier">old_rating</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">change</span>).<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="change-method" class="method-detail ">
+				<a name="M000039"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">change</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The change is the points you earn or lose.
+</p>
+<p>
+For more information visit <a
+href="http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details">Wikipedia</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/rating.rb, line 52</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change</span>
+      <span class="ruby-identifier">k_factor</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">*</span> ( <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">expected</span> )
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="expected-method" class="method-detail ">
+				<a name="M000037"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">expected</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The expected score is the probably outcome of the match, depending on the
+difference in rating between the two players.
+</p>
+<p>
+For more information visit <a
+href="http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details">Wikipedia</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="expected-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/rating.rb, line 44</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">expected</span>
+      <span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> ( <span class="ruby-value">1.0</span> <span class="ruby-operator">+</span> ( <span class="ruby-value">10.0</span> <span class="ruby-operator">**</span> ((<span class="ruby-identifier">other_rating</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_rating</span>.<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">/</span> <span class="ruby-value">400.0</span>) ) )
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="result-method" class="method-detail ">
+				<a name="M000035"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">result</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The result of the match. 1 means that the player won, 0 means that the
+player lost and 0.5 means that it was a draw.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="result-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/rating.rb, line 29</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid result: #{@result.inspect}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">valid_result?</span>
+      <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="valid-result--method" class="method-detail ">
+				<a name="M000036"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">valid_result?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Only values between 0 and 1 are considered to be valid scores.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="valid-result--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/rating.rb, line 35</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_result?</span>
+      (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>).<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@result</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

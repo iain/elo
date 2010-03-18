@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Elo::Configuration</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/elo/configuration_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/elo/configuration.rb">lib/elo/configuration.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000004">#apply_fide_k_factors</a></li>
+					
+					<li><a href="#M000001">#k_factor</a></li>
+					
+					<li><a href="#M000003">#k_factors</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Elo.html">Elo</a></li>
+				
+					<li><a href="../Elo/Configuration.html">Elo::Configuration</a></li>
+				
+					<li><a href="../Elo/Game.html">Elo::Game</a></li>
+				
+					<li><a href="../Elo/Helper.html">Elo::Helper</a></li>
+				
+					<li><a href="../Elo/Helper/ClassMethods.html">Elo::Helper::ClassMethods</a></li>
+				
+					<li><a href="../Elo/Player.html">Elo::Player</a></li>
+				
+					<li><a href="../Elo/Rating.html">Elo::Rating</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Elo::Configuration</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="pro-rating-boundry-attribute-method" class="method-detail">
+				<a name="pro_rating_boundry"></a>
+				
+				<a name="pro_rating_boundry="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">pro_rating_boundry</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+This is the lower boundry of the rating you need to be a pro player. This
+setting is used in the FIDE k-factor rules. (default = 2400)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="starter-boundry-attribute-method" class="method-detail">
+				<a name="starter_boundry"></a>
+				
+				<a name="starter_boundry="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">starter_boundry</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+This is the lower boundry in the amount of games played to be a starting
+player This setting is used in the FIDE k-factor rules. (default = 30)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="default-k-factor-attribute-method" class="method-detail">
+				<a name="default_k_factor"></a>
+				
+				<a name="default_k_factor="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">default_k_factor</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The default k-factor is chosen when no k-factor rules apply. K-factor rules
+can be added by using the <tt><a
+href="Configuration.html#M000001">k_factor</a></tt>-method. (default = 15)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="default-rating-attribute-method" class="method-detail">
+				<a name="default_rating"></a>
+				
+				<a name="default_rating="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">default_rating</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+This is the rating every player starts out with. (default = 1000)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="use-settings-attribute-method" class="method-detail">
+				<a name="use_FIDE_settings"></a>
+				
+				<a name="use_FIDE_settings="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">use_FIDE_settings</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Use the settings that FIDE use for determening the K-factor. This is the
+case when all settings are unaltered. (default = true)
+</p>
+<p>
+In short:
+</p>
+<ul>
+<li>K-factor is 25 when a player is a starter (less than 30 games played)
+
+</li>
+<li>K-factor is 10 when a player is a pro (rating above 2400, now or in the
+past)
+
+</li>
+<li>K-factor is 15 when a player in other cases
+
+</li>
+</ul>
+<p>
+If you want to use your own settings, either change the boundry settings,
+or set this setting to false and add you&#8217;re own k-factor rules.
+K-factor rules can be added by using the <tt><a
+href="Configuration.html#M000001">k_factor</a></tt>-method.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="k-factor-method" class="method-detail ">
+				<a name="M000001"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">k_factor</span><span
+						class="method-args">(factor, &rule)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add a K-factor rule. The first argument is the k-factor value. The block
+should return a boolean that determines if this K-factor rule applies. The
+first rule that applies is the one determining the K-factor.
+</p>
+<p>
+The block is instance_eval&#8216;ed into the player, so you can access all
+it&#8217;s properties directly. The K-factor is recalculated every time a
+match is played.
+</p>
+<p>
+By default, the FIDE settings are used (see: <tt><a
+href="Configuration.html#use_FIDE_settings">use_FIDE_settings</a></tt>). To
+implement that yourself, you could write:
+</p>
+<pre>
+  Elo.configure do |config|
+    config.k_factor(10) { pro? or pro_rating? }
+    config.k_factor(25) { starter? }
+    config.default_k_factor = 15
+  end
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="k-factor-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/configuration.rb, line 58</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factor</span>(<span class="ruby-identifier">factor</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">rule</span>)
+      <span class="ruby-identifier">k_factors</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:factor</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">factor</span>, <span class="ruby-identifier">:rule</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rule</span> }
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="apply-fide-k-factors-method" class="method-detail ">
+				<a name="M000004"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">apply_fide_k_factors</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="apply-fide-k-factors-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/configuration.rb, line 73</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply_fide_k_factors</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@applied_fide_k_factors</span>
+        <span class="ruby-identifier">k_factor</span>(<span class="ruby-value">10</span>) { <span class="ruby-identifier">pro?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">pro_rating?</span> }
+        <span class="ruby-identifier">k_factor</span>(<span class="ruby-value">25</span>) { <span class="ruby-identifier">starter?</span> }
+        <span class="ruby-ivar">@applied_fide_k_factors</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="k-factors-method" class="method-detail ">
+				<a name="M000003"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">k_factors</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="k-factors-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/elo/configuration.rb, line 69</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">k_factors</span>
+      <span class="ruby-ivar">@k_factors</span> <span class="ruby-operator">||=</span> []
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
