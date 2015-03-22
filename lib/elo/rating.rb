@@ -19,7 +19,7 @@ module Elo
 
 		# The new rating is... wait for it... the new rating!
     def new_rating
-      (old_rating.to_f + change).to_i
+      old_rating.to_f + change
     end
 
 		private
