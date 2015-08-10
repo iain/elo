@@ -19,7 +19,7 @@ Major League Baseball.
 
 == Usage
 
-You need to have at least to players that can play a game (duh).
+You need to have at least two players that can play a game (duh).
 
   bob  = Elo::Player.new
   jane = Elo::Player.new(:rating => 1500)
