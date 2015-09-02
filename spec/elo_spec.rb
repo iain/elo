@@ -36,9 +36,6 @@ describe "Elo" do
     bob.games_played.should == 8
     bob.games.should == [ game1, game2, game3, game4, game5, game6, game7, game8 ]
 
-    Elo::Player.all.should == [ bob, jane ]
-    Elo::Game.all.should == [ game1, game2, game3, game4, game5, game6, game7, game8 ]
-
   end
 
   describe "Configuration" do
