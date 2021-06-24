@@ -50,7 +50,7 @@ module Elo
 		# For more information visit
 		# {Wikipedia}[http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details]
     def change
-      k_factor.to_f * ( result.to_f - expected )
+      (k_factor.to_f * ( result.to_i - expected )).to_i
     end
 
 

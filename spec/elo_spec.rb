@@ -38,6 +38,16 @@ describe "Elo" do
 
   end
 
+  #from Wikipedia: The winner of a contest between two players gains a certain number of points in his rating and the losing player loses the same amount.
+  it "rating change should be the same" do
+    bob = Elo::Player.new :rating => 1000
+    jane = Elo::Player.new :rating => 1000
+
+    game1 = bob.wins_from(jane)
+
+    (1000 - jane.rating).should == (bob.rating - 1000)
+  end
+
   describe "Configuration" do
 
     it "default_rating" do
