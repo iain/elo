@@ -24,7 +24,7 @@ You need to have at least two players that can play a game (duh).
   bob  = Elo::Player.new
   jane = Elo::Player.new(:rating => 1500)
 
-Once you have players, you can register games in a variaty of ways.
+Once you have players, you can register games in a variety of ways.
 There is more than one way to do it, choose whatever works from your other code:
 
   game1 = bob.wins_from(jane)
