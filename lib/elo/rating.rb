@@ -19,7 +19,7 @@ module Elo
 
 		# The new rating is... wait for it... the new rating!
     def new_rating
-      (old_rating.to_f + change).to_i
+      (old_rating.to_f + change).round
     end
 
 		private
@@ -38,7 +38,7 @@ module Elo
 
 		# The expected score is the probably outcome of the match, depending
 		# on the difference in rating between the two players.
-		# 
+		#
 		# For more information visit
 		# {Wikipedia}[http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details]
     def expected
@@ -46,7 +46,7 @@ module Elo
     end
 
 		# The change is the points you earn or lose.
-		# 
+		#
 		# For more information visit
 		# {Wikipedia}[http://en.wikipedia.org/wiki/Elo_rating_system#Mathematical_details]
     def change
