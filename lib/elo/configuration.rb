@@ -1,7 +1,5 @@
 module Elo
-
   class Configuration
-
     # This is the lower boundry of the rating you need to be a pro player.
     # This setting is used in the FIDE k-factor rules. (default = 2400)
     attr_accessor :pro_rating_boundry
@@ -19,9 +17,9 @@ module Elo
 
     # Use the settings that FIDE use for determening the K-factor.
     # This is the case when all settings are unaltered. (default = true)
-    # 
+    #
     # In short:
-    # 
+    #
     # * K-factor is 25 when a player is a starter (less than 30 games played)
     # * K-factor is 10 when a player is a pro (rating above 2400, now or in the past)
     # * K-factor is 15 when a player in other cases
@@ -72,12 +70,10 @@ module Elo
 
     def apply_fide_k_factors
       unless @applied_fide_k_factors
-        k_factor(10) { pro? or pro_rating? }
-        k_factor(25) { starter? }
-        @applied_fide_k_factors = true
+      k_factor(10) { pro? or pro_rating? }
+      k_factor(25) { starter? }
+      @applied_fide_k_factors = true
       end
     end
-
   end
-
 end

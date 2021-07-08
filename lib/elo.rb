@@ -6,7 +6,6 @@ require 'elo/rating'
 
 # See README.rdoc for general information about Elo.
 module Elo
-
   # Accessor to the configuration object, which,
   # should be instantiated only once (and automatically).
   def self.config
@@ -22,5 +21,4 @@ module Elo
   def self.configure(&block)
     yield(config)
   end
-
 end
